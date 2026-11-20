@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toaster Roaster — Roast Joke Generator | Get Perfectly Toasted</title>
+  <meta name="description" content="Toaster Roaster is the premium roast joke generator. Pick a victim, choose the heat, and get a perfectly toasted roast — mild, savage, or total meltdown. Free, no sign-up." />
+  <meta name="keywords" content="roast generator, roast jokes, funny roasts, roast battle, toast, joke generator" />
+  <meta name="author" content="Toaster Roaster" />
+  <meta name="theme-color" content="#14100c" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Toaster Roaster — Roast Joke Generator" />
+  <meta property="og:description" content="Pick a victim, choose the heat, and get a perfectly toasted roast. Mild, savage, or total meltdown." />
+  <meta property="og:site_name" content="Toaster Roaster" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Toaster Roaster — Roast Joke Generator" />
+  <meta name="twitter:description" content="Pick a victim, choose the heat, and get a perfectly toasted roast." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============ Header ============ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="Toaster Roaster — home">
+        <span class="logo-mark" aria-hidden="true">🍞</span>
+        Toaster <em>Roaster</em>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#generator">Generator</a>
+        <a href="#battle">Roast Battle</a>
+        <a href="#browse">Categories</a>
+        <a href="#favorites">Favorites</a>
+        <a href="#how">How it works</a>
+      </nav>
+      <a class="nav-cta" href="#generator">Roast someone 🔥</a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">☰</button>
+    </div>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+      <a href="#generator">Generator</a>
+      <a href="#battle">Roast Battle</a>
+      <a href="#browse">Categories</a>
+      <a href="#favorites">Favorites</a>
+      <a href="#how">How it works</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ Hero ============ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">The roast joke generator</span>
+          <h1>Get roasted.<br /><span class="grad">Perfectly toasted.</span></h1>
+          <p class="hero-sub">Pick a victim, dial in the heat, and let the toaster do the rest. <strong>Fresh burns, zero crumbs</strong> — mild enough for your grandma, savage enough for your group chat.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#generator">🔥 Start roasting</a>
+            <a class="btn btn-ghost" href="#battle">🥊 Roast battle</a>
+          </div>
+          <p class="hero-note">Free forever · No sign-up · 100+ hand-crafted roasts</p>
+        </div>
+
+        <div class="toaster-stage" aria-hidden="true">
+          <svg class="toaster" id="toaster" viewBox="0 0 320 230" role="img" aria-label="A toaster popping up a slice of toast">
+            <defs>
+              <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f2f2f5" />
+                <stop offset="0.5" stop-color="#cfcfd6" />
+                <stop offset="1" stop-color="#9d9da8" />
+              </linearGradient>
+              <linearGradient id="toastGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffd98f" />
+                <stop offset="1" stop-color="#f5b95c" />
+              </linearGradient>
+            </defs>
+            <!-- popping toast -->
+            <g class="toast-pop" id="toast-slice">
+              <rect x="102" y="18" width="116" height="92" rx="14" fill="url(#toastGrad)" stroke="#e8a33d" stroke-width="3" />
+              <rect x="112" y="28" width="96" height="72" rx="10" fill="#ffe3ae" />
+              <circle cx="140" cy="58" r="6" fill="#3a2a18" />
+              <circle cx="180" cy="58" r="6" fill="#3a2a18" />
+              <path d="M146 76 Q160 88 174 76" stroke="#3a2a18" stroke-width="5" fill="none" stroke-linecap="round" />
+              <circle cx="128" cy="72" r="5" fill="#ffb59d" opacity="0.8" />
+              <circle cx="192" cy="72" r="5" fill="#ffb59d" opacity="0.8" />
+            </g>
+            <!-- slots -->
+            <rect x="58" y="86" width="96" height="14" rx="7" fill="#2b2620" />
+            <rect x="166" y="86" width="96" height="14" rx="7" fill="#2b2620" />
+            <!-- body -->
+            <rect x="30" y="96" width="260" height="104" rx="24" fill="url(#chrome)" stroke="#8a8a96" stroke-width="2" />
+            <rect x="30" y="176" width="260" height="24" rx="12" fill="#3a352e" opacity="0.25" />
+            <!-- lever -->
+            <rect x="288" y="118" width="10" height="34" rx="5" fill="#2b2620" />
+            <circle cx="293" cy="112" r="10" fill="#ff6b35" stroke="#d14d1f" stroke-width="2" />
+            <!-- knobs -->
+            <circle cx="90" cy="146" r="13" fill="#2b2620" />
+            <circle cx="90" cy="146" r="5" fill="#ffb03a" />
+            <circle cx="130" cy="146" r="13" fill="#2b2620" />
+            <circle cx="130" cy="146" r="5" fill="#ff6b35" />
+            <!-- brand -->
+            <text x="205" y="152" font-family="monospace" font-size="15" font-weight="bold" letter-spacing="3" fill="#4a443c">TOASTER</text>
+            <!-- feet -->
+            <rect x="52" y="200" width="26" height="12" rx="6" fill="#2b2620" />
+            <rect x="242" y="200" width="26" height="12" rx="6" fill="#2b2620" />
+          </svg>
+          <p class="toaster-caption">Fresh out the toaster · Handle with care</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Marquee ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>🔥 <b>Fresh burns daily</b></span><span>🍞 <b>Zero crumbs</b></span><span>😂 <b>Group-chat approved</b></span><span>⚡ <b>Instant roasts</b></span><span>🎲 <b>100+ roasts</b></span><span>🥊 <b>Roast battles</b></span>
+        <span>🔥 <b>Fresh burns daily</b></span><span>🍞 <b>Zero crumbs</b></span><span>😂 <b>Group-chat approved</b></span><span>⚡ <b>Instant roasts</b></span><span>🎲 <b>100+ roasts</b></span><span>🥊 <b>Roast battles</b></span>
+      </div>
+    </div>
+
+    <!-- ============ Generator ============ -->
+    <section class="section" id="generator">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">The machine</span>
+          <h2>Load the toaster.</h2>
+          <p>Name your victim, pick a category, set the heat — then press the button and watch the toast pop.</p>
+        </div>
+
+        <div class="generator-card reveal">
+          <label class="field-label" for="roast-name">Who's getting roasted?</label>
+          <div class="name-row">
+            <input class="name-input" id="roast-name" type="text" placeholder="Type a name… e.g. Alex" maxlength="30" autocomplete="off" />
+          </div>
+          <div class="preset-row" role="group" aria-label="Quick picks">
+            <button class="preset-btn" type="button" data-name="Alex">👤 Alex</button>
+            <button class="preset-btn" type="button" data-name="Sam">👤 Sam</button>
+            <button class="preset-btn" type="button" data-name="My best friend">🧑‍🤝‍🧑 Best friend</button>
+            <button class="preset-btn" type="button" data-name="My boss">💼 Boss</button>
+            <button class="preset-btn" type="button" data-name="My ex">💔 Ex</button>
+          </div>
+
+          <span class="field-label" id="intensity-label">Roast heat</span>
+          <div class="intensity-row" role="group" aria-labelledby="intensity-label">
+            <button class="intensity-btn" type="button" data-level="1" aria-pressed="false">🌱 Mild</button>
+            <button class="intensity-btn active" type="button" data-level="2" aria-pressed="true">🔥 Medium</button>
+            <button class="intensity-btn" type="button" data-level="3" aria-pressed="false">🥵 Savage</button>
+            <button class="intensity-btn" type="button" data-level="4" aria-pressed="false">☢️ Nuclear</button>
+          </div>
+          <input class="intensity-range" id="intensity-range" type="range" min="1" max="4" step="1" value="2" aria-label="Roast heat level" />
+          <p class="intensity-desc" id="intensity-desc">🔥 Medium — Properly toasted. A little crispy.</p>
+
+          <span class="field-label" id="category-label">Roast flavour</span>
+          <div class="chip-row" role="group" aria-labelledby="category-label">
+            <button class="category-chip active" type="button" data-category="all" aria-pressed="true">🎲 All roasts</button>
+            <button class="category-chip" type="button" data-category="general" aria-pressed="false">💬 General</button>
+            <button class="category-chip" type="button" data-category="looks" aria-pressed="false">🪞 Looks</button>
+            <button class="category-chip" type="button" data-category="brains" aria-pressed="false">🧠 Brains</button>
+            <button class="category-chip" type="button" data-category="gaming" aria-pressed="false">🎮 Gaming</button>
+            <button class="category-chip" type="button" data-category="work" aria-pressed="false">💼 Work</button>
+            <button class="category-chip" type="button" data-category="style" aria-pressed="false">👟 Style</button>
+            <button class="category-chip" type="button" data-category="food" aria-pressed="false">🍕 Food</button>
+          </div>
+
+          <div class="generate-row">
+            <button class="btn btn-primary" id="generate-btn" type="button">🍞 Roast it!</button>
+            <button class="btn btn-ghost" id="roast-me-btn" type="button">🪞 Roast me</button>
+          </div>
+
+          <div class="roast-output is-empty" id="roast-output" aria-live="polite">
+            <div class="roast-empty-icon" aria-hidden="true">🍞</div>
+            <p class="roast-empty-text">Your roast will pop up here…</p>
+            <p class="roast-text" id="roast-text" hidden></p>
+            <div class="roast-tags" id="roast-meta" hidden></div>
+            <div class="burn-meter" id="burn-meter" hidden>
+              <div class="burn-track"><div class="burn-fill" id="burn-fill"></div></div>
+              <p class="burn-label" id="burn-label"></p>
+            </div>
+            <div class="roast-actions" id="roast-actions" hidden>
+              <button class="action-btn" id="copy-btn" type="button">📋 Copy</button>
+              <button class="action-btn" id="share-btn" type="button">↗ Share</button>
+              <button class="action-btn" id="save-btn" type="button">🤍 Save roast</button>
+              <button class="action-btn" id="next-btn" type="button">🎲 Another one</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="daily-strip reveal">
+          <span class="daily-emoji" aria-hidden="true">📅</span>
+          <div>
+            <h3>Roast of the day</h3>
+            <p id="daily-roast-text">Loading today’s burn…</p>
+          </div>
+          <button class="btn btn-ghost btn-sm" id="daily-copy" type="button">📋 Copy it</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Battle ============ -->
+    <section class="section" id="battle">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Head to head</span>
+          <h2>Roast battle.</h2>
+          <p>Two names enter. Three rounds of burns. Nobody leaves with their dignity.</p>
+        </div>
+        <div class="generator-card reveal">
+          <div class="battle-grid">
+            <div>
+              <label class="field-label" for="battle-name-a">Contender one</label>
+              <input class="battle-input" id="battle-name-a" type="text" placeholder="e.g. Alex" maxlength="30" autocomplete="off" />
+            </div>
+            <div>
+              <label class="field-label" for="battle-name-b">Contender two</label>
+              <input class="battle-input" id="battle-name-b" type="text" placeholder="e.g. Sam" maxlength="30" autocomplete="off" />
+            </div>
+          </div>
+          <div class="generate-row">
+            <button class="btn btn-primary" id="battle-btn" type="button">🥊 Start the battle</button>
+            <button class="btn btn-ghost hidden" id="battle-copy" type="button">📋 Copy battle</button>
+          </div>
+          <div class="battle-output" id="battle-output" aria-live="polite">
+            <p class="battle-status">Enter two names and ring the bell. The toaster will handle the trash talk.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Browse ============ -->
+    <section class="section" id="browse">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Pick your poison</span>
+          <h2>Browse by flavour.</h2>
+          <p>Tap a category and the generator will jump straight to it.</p>
+        </div>
+        <div class="browse-grid reveal">
+          <button class="browse-chip" type="button" data-category="general"><span class="browse-emoji">💬</span><span class="browse-label">General</span><span class="browse-count">All-purpose burns</span></button>
+          <button class="browse-chip" type="button" data-category="looks"><span class="browse-emoji">🪞</span><span class="browse-label">Looks</span><span class="browse-count">Mirror, mirror…</span></button>
+          <button class="browse-chip" type="button" data-category="brains"><span class="browse-emoji">🧠</span><span class="browse-label">Brains</span><span class="browse-count">For the slow thinkers</span></button>
+          <button class="browse-chip" type="button" data-category="gaming"><span class="browse-emoji">🎮</span><span class="browse-label">Gaming</span><span class="browse-count">For the 0.2 K/D crowd</span></button>
+          <button class="browse-chip" type="button" data-category="work"><span class="browse-emoji">💼</span><span class="browse-label">Work</span><span class="browse-count">Office-friendly fire</span></button>
+          <button class="browse-chip" type="button" data-category="style"><span class="browse-emoji">👟</span><span class="browse-label">Style</span><span class="browse-count">Fashion police</span></button>
+          <button class="browse-chip" type="button" data-category="food"><span class="browse-emoji">🍕</span><span class="browse-label">Food</span><span class="browse-count">Kitchen disasters</span></button>
+          <button class="browse-chip" type="button" data-category="all"><span class="browse-emoji">🎲</span><span class="browse-label">Surprise me</span><span class="browse-count">Anything goes</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Stats ============ -->
+    <section class="section" id="stats">
+      <div class="container">
+        <div class="stats-grid reveal">
+          <div class="stat-card"><p class="stat-num" id="stats-generated">0</p><p class="stat-label">Roasts served by you</p></div>
+          <div class="stat-card"><p class="stat-num" id="stats-saved">0</p><p class="stat-label">Roasts in your favorites</p></div>
+          <div class="stat-card"><p class="stat-num" id="stats-burned">0</p><p class="stat-label">Burns in the toaster</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Favorites & history ============ -->
+    <section class="section" id="favorites">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Your stash</span>
+          <h2>Saved burns &amp; recent roasts.</h2>
+          <p>Your favorites live in your browser — no account, no cloud, just crispy memories.</p>
+        </div>
+        <div class="split-grid reveal">
+          <div class="panel">
+            <div class="panel-head">
+              <h3>❤️ Favorites</h3>
+              <button class="link-btn" id="clear-favorites" type="button">Clear all</button>
+            </div>
+            <p class="empty-note" id="favorites-empty">Nothing saved yet. Generate a roast you love and hit “Save roast”.</p>
+            <ul class="fav-list" id="favorites-list"></ul>
+          </div>
+          <div class="panel">
+            <div class="panel-head">
+              <h3>🕘 Recent roasts</h3>
+              <button class="link-btn" id="clear-history" type="button">Clear</button>
+            </div>
+            <p class="empty-note" id="history-empty">No roasts yet. The toaster is warming up…</p>
+            <ul class="history-list" id="history-list"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ How it works ============ -->
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Dead simple</span>
+          <h2>How it works.</h2>
+          <p>Three steps between you and the perfect burn.</p>
+        </div>
+        <div class="steps-grid reveal">
+          <div class="step-card">
+            <span class="step-num">1</span>
+            <h3>Name the victim</h3>
+            <p>Type a name or pick a preset — friend, boss, ex, or yourself if you're feeling brave.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">2</span>
+            <h3>Set the heat</h3>
+            <p>Mild for grandma, Medium for friends, Savage for rivals, Nuclear for total meltdown.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">3</span>
+            <h3>Serve it hot</h3>
+            <p>Hit Roast it, watch the toast pop, then copy, share, or save the burn for later.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Burning questions</span>
+          <h2>FAQ.</h2>
+        </div>
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <h3>Is Toaster Roaster free?</h3>
+            <p>Yes — free forever, no sign-up, no ads, no account. Roast away.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Will it hurt someone's feelings?</h3>
+            <p>That's the point of a roast — but keep it playful. Mild is safe for anyone; Nuclear is for people who can take a joke. Don't aim it at strangers.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Where do my favorites go?</h3>
+            <p>They're saved in your own browser (local storage). Nobody else can see them, and clearing your browser data clears them too.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can I share a roast?</h3>
+            <p>Yes — copy it with one tap, or use Share to send it to any app. The X/Twitter share opens a ready-made post.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Is there a new roast every day?</h3>
+            <p>Yes. The Roast of the Day changes at midnight — come back tomorrow for a fresh burn.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <a class="logo" href="#top" aria-label="Toaster Roaster — back to top">
+            <span class="logo-mark" aria-hidden="true">🍞</span>
+            Toaster <em>Roaster</em>
+          </a>
+          <p>Fresh burns, zero crumbs. A tiny machine that turns names into perfectly toasted roasts — made for laughs, not for harm.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#generator">Generator</a>
+          <a href="#battle">Roast Battle</a>
+          <a href="#browse">Categories</a>
+          <a href="#favorites">Favorites</a>
+          <a href="#how">How it works</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Toaster Roaster. Roast responsibly. 🔥</span>
+        <span>Made with a very hot toaster.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/roasts.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
